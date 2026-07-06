@@ -56,6 +56,8 @@ public class Catalog {
     }
 
     public Optional<BookCopy> getAvailableBookCopy(Book book) {
+        if (!book.isBorrowable())
+            return Optional.empty();
         if (!this.isBookAvalable(book))
             throw new IllegalArgumentException("Book Not found");
 

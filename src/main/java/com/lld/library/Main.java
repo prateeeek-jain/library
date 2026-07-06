@@ -3,6 +3,7 @@ package com.lld.library;
 import java.time.LocalDateTime;
 
 import com.lld.library.enums.BookStatus;
+import com.lld.library.enums.BookType;
 import com.lld.library.enums.MemberShipType;
 import com.lld.library.enums.NotificationChannel;
 import com.lld.library.notifier.EmailNotifier;
@@ -17,8 +18,8 @@ public class Main {
         Member member1 = new Member("M101", "Alice", "alice@gmail.com", MemberShipType.REGULAR);
         Member member2 = new Member("M102", "Bob", "bob@gmail.com", MemberShipType.PREMIUM);
 
-        Book book1 = new Book("B101", "Book1", "Author1", "Thriller");
-        Book book2 = new Book("B102", "Book2", "Author2", "Comedy");
+        Book book1 = new Book("B101", "Book1", "Author1", "Thriller", BookType.LENDING);
+        Book book2 = new Book("B102", "Book2", "Author2", "Comedy", BookType.LENDING);
 
         NotificationService notificationService = new NotificationService();
         notificationService.registerNotifier(NotificationChannel.EMAIL, new EmailNotifier());
